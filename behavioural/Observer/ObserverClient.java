@@ -1,8 +1,8 @@
 package behavioural.Observer;
 
 import behavioural.Behavioural;
-
-import java.util.Observer;
+import behavioural.Observer.Displays.AverageScoreDisplay;
+import behavioural.Observer.Displays.CurrentScoreDisplay;
 
 public class ObserverClient implements Behavioural {
 

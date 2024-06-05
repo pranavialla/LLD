@@ -1,4 +1,8 @@
-package behavioural.Observer;
+package behavioural.Observer.Displays;
+
+import behavioural.Observer.CrickerDataObserver;
+import behavioural.Observer.CricketDataPublisher;
+import behavioural.Observer.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +27,14 @@ public class CurrentScoreDisplay implements CricketDataObservable {
         observables.add(observable);
     }
 
-    public void updateByPull(Subject obeservable, Object args){
+    public void updateByPull(Subject obeservable, CrickerDataObserver obserever){
         CricketDataPublisher cricketDataPublisher=(CricketDataPublisher)  obeservable;
         if (obeservable instanceof CricketDataPublisher){
-            this.runs=cricketDataPublisher.getRuns();
-            this.overs=cricketDataPublisher.getOver();
-            this.wickets=cricketDataPublisher.getWickets();
+            obserever.runs=cricketDataPublisher.getRuns();
+            obserever.overs=cricketDataPublisher.getOver();
+            obserever.wickets=cricketDataPublisher.getWickets();
 
-            display();
+            obserever.display();
 
         }
     }

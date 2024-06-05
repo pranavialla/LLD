@@ -1,5 +1,9 @@
-package behavioural.Observer;
+package behavioural.Observer.Displays;
 
+
+import behavioural.Observer.CrickerDataObserver;
+import behavioural.Observer.CricketDataPublisher;
+import behavioural.Observer.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +28,13 @@ public class AverageScoreDisplay implements CricketDataObservable {
         observables.add(observable);
     }
 
-    public void updateByPull(Subject obeservable, Object args){
+    public void updateByPull(Subject obeservable, CrickerDataObserver observer){
         CricketDataPublisher cricketDataPublisher=(CricketDataPublisher)  obeservable;
         if (obeservable instanceof CricketDataPublisher){
-            this.runs=cricketDataPublisher.getRuns();
-            this.overs=cricketDataPublisher.getOver();
+            observer.runs=cricketDataPublisher.getRuns();
+            observer.overs=cricketDataPublisher.getOver();
 
-            display();
+            observer.display();
 
         }
     }

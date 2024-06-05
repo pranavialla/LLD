@@ -3,9 +3,9 @@ package behavioural.Observer;
 
 
 public class CrickerDataObserver {
-    private int runs;
-    private int wickets;
-    private float overs;
+    public int runs;
+    public int wickets;
+    public float overs;
 
     public void update(int runs, int wickets, float overs) {
         this.wickets= wickets;
@@ -14,7 +14,7 @@ public class CrickerDataObserver {
         display();
     }
 
-    void display(){
+    public void display(){
         System.out.println("Runs: "+runs+" Wickets: "+wickets+" Overs: "+overs);
     }
 }
