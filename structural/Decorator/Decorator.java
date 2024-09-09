@@ -1,6 +1,6 @@
 package structural.Decorator;
 
 
-public interface Decorator  {
+public interface  Decorator  {
 
 }

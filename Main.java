@@ -10,7 +10,7 @@ import behavioural.momento.GitUser;
 import creational.AbstractFactory.Client;
 import creational.Builder.Director;
 import creational.Factory.ConditionalFactory;
-import creational.Factory.Product;
+import creational.Factory.Product.Product;
 import creational.Prototype.Driver;
 import structural.Adapter.OldAdaptee;
 import structural.Composite.CompositePatternDriver;

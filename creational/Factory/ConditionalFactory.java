@@ -1,7 +1,11 @@
 package creational.Factory;
 
+import creational.Factory.Product.ElectronicProduct;
+import creational.Factory.Product.MakeupProduct;
+import creational.Factory.Product.Product;
+
 public class ConditionalFactory {
-    public Product getProduct( String product) {
+    public Product getProduct(String product) {
         if ( product.equals("MAKEUP") ) {
             return new MakeupProduct();
         }

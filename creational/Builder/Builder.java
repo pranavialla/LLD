@@ -2,7 +2,7 @@ package creational.Builder;
 
 import javax.swing.plaf.PanelUI;
 
-public abstract class Builder {
+public abstract class  Builder {
     public int ram;
     int rom;
     int version;

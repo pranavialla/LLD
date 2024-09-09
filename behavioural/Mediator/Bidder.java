@@ -17,5 +17,6 @@ public class Bidder implements Colleague{
     @Override
     public void placeABid(int bidAmount) {
         this.bidAmount=bidAmount;
+        mediator.placeABid(this, bidAmount);
     }
 }
