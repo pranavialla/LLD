@@ -23,6 +23,11 @@ public class CompositePatternDriver {
         FilesSystem folder2=new Folder(children2, "folder2");
 
         folder2.render();
+        /*
+        he key part is that both File (leaf) and Directory 
+        (composite) share the same interface and the client treats them uniformly.
+
+        */
 
     }
 

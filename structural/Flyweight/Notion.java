@@ -4,10 +4,10 @@ public class Notion implements TextEditor{
     Object[][] page;
     Flyweight flyweight;
 
-
     Notion(){
-        page=new Object[100][100];
-        flyweight=new Flyweight();
+        page = new Object[100][100];
+        // Use the shared flyweight instance
+        flyweight = Flyweight.getInstance();
     }
     @Override
     public void write(int xAxis, int yAxis, char character) {

@@ -54,8 +54,20 @@ public class Main {
         CompositePatternDriver compositePatternDriver= new CompositePatternDriver();
 
         System.out.println("*********** Adapter design pattern ************");
-        OldAdaptee oldAdaptee = new OldAdaptee("MP4");
-        oldAdaptee.playMusic();
+        /*
+        
+        The client code does not need to change its interface usage.
+        The only change is the instantiation: the adapter is created instead of the original class.
+        The adapter handles the conversion internally, so the client code remains clean and decoupled from the adaptee’s interface.
+                
+                */
+        
+        
+        MP3Adaptee player = new MP3Player(); // Suppose MP3Player implements MP3Adaptee
+        player.playMusic();
+
+        MP3Adaptee player = new MP3Adapter("MP4"); // Adapter wraps an incompatible class
+        player.playMusic();
 
         System.out.println("***********facade ************");
         EmployeeDTO employeeDTO = new EmployeeDTO();
