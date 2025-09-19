@@ -1,6 +1,6 @@
 package creational.singleton;
-public class Lazy  {
-    private static Lazy lazyThreadSafeInstanc = null;
+public final class Lazy  {
+    private static volatile Lazy lazyThreadSafeInstance = null;
     private int c=0;
 
     private Lazy() {
@@ -8,15 +8,15 @@ public class Lazy  {
         System.out.println("Lazy instance created "+c+ " times");
     }
 
-    public static Lazy createLazySingletonThreadSafeInstance() {
-        if (lazyThreadSafeInstanc == null) {
+    public static Lazy getInstance() {
+        if (lazyThreadSafeInstance == null) {
             synchronized (Lazy.class) {
-                if (lazyThreadSafeInstanc == null) {
-                    lazyThreadSafeInstanc = new Lazy();
-                    return lazyThreadSafeInstanc;
+                if (lazyThreadSafeInstance == null) {
+                    lazyThreadSafeInstance = new Lazy();
                 }
             }
         }
-        return lazyThreadSafeInstanc;
+        return lazyThreadSafeInstance;
     }
+
 }
