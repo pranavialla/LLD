@@ -5,14 +5,15 @@ import creational.AbstractFactory.*;
 import java.util.Objects;
 
 public class SamsungFactory implements Factory{
-    public  PhoneStore getModel(String model)
-    {
-        if(Objects.equals(model, "BASIC"))
-            return new Basic();
-        else if(Objects.equals(model, "ULTRA"))
-            return new Ultra();
-        else {
-            return null;
+   @Override
+    public PhoneStore getModel(Model model) {
+        switch (model) {
+            case ULTRA:
+                return new Ultra();
+            case BASIC:
+                return new Basic();
+            default:
+                throw new IllegalArgumentException("Model not supported for Samsung: " + model);
         }
     }
 }

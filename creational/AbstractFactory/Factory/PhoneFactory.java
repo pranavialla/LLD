@@ -6,15 +6,16 @@ import creational.AbstractFactory.PhoneStore;
 import java.util.Objects;
 
 public class PhoneFactory {
-        public static Factory getPhone(String model)
-        {
-            if(Objects.equals(model, "APPLE"))
+        public static Factory getFactory(Brand brand) {
+        switch (brand) {
+            case APPLE:
                 return new AppleFactory();
-            else if(Objects.equals(model, "SAMSUNG"))
+            case SAMSUNG:
                 return new SamsungFactory();
-            else if(Objects.equals(model, "ONEPLUS"))
+            case ONEPLUS:
                 return new OneplusFactory();
-
-            return null;
+            default:
+                throw new IllegalArgumentException("Unknown brand: " + brand);
         }
+    }
 }

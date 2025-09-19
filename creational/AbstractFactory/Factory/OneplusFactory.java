@@ -6,14 +6,15 @@ import java.util.Objects;
 
 public class OneplusFactory implements Factory
 {
-    public PhoneStore getModel(String model)
-    {
-        if(Objects.equals(model, "NORD"))
-            return new Nord();
-        else if(Objects.equals(model, "NORDPRO"))
-            return new NordPro();
-        else {
-            return null;
+   @Override
+    public PhoneStore getModel(Model model) {
+        switch (model) {
+            case NORD:
+                return new Nord();
+            case NORDPRO:
+                return new NordPro();
+            default:
+                throw new IllegalArgumentException("Model not supported for Oneplus: " + model);
         }
     }
 }

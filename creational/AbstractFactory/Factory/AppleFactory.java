@@ -8,14 +8,15 @@ import java.util.Objects;
 
 public class AppleFactory implements Factory
 {
-    public PhoneStore getModel(String model)
-    {
-        if(Objects.equals(model, "PRO"))
-            return new Pro();
-        else if(Objects.equals(model, "PROMAX"))
-            return new ProMax();
-        else {
-            return null;
+    @Override
+    public PhoneStore getModel(Model model) {
+        switch (model) {
+            case PRO:
+                return new Pro();
+            case PROMAX:
+                return new ProMax();
+            default:
+                throw new IllegalArgumentException("Model not supported for Apple: " + model);
         }
     }
 }
